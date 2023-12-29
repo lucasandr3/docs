@@ -1,4 +1,4 @@
-# LicitaDocs
+# Docs
 
 ## Project setup
 ```
