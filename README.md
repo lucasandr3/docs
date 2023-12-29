@@ -1,4 +1,4 @@
-# sicaf
+# LicitaDocs
 
 ## Project setup
 ```
