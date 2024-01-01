@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    Dashboard
+    Dashboard 
+    <p>Nome: {{ this.$store.state.user.name }}</p>
   </div>
 </template>
 

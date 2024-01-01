@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-lg bg-body-light shadow-sm mb-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">LicitaDocs</a>
+            <a class="navbar-brand" href="/">LicitaDocs</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -78,7 +78,7 @@
                 </li>
             </ul>
             <form class="d-flex" role="search">
-                <router-link to="/empresa" class="nav-link"><strong>Sair</strong></router-link>
+                <a href="javascript:void(0)" @click="logout" class="nav-link"><strong>Sair</strong></a>
             </form>
             </div>
         </div>
@@ -87,7 +87,13 @@
 
 <script>
 export default {
-    name: 'Navbar'
+    name: 'Navbar',
+    methods: {
+        logout(){
+            this.$store.commit('logout');
+            this.$router.push('/login');
+        }
+    }
 }
 </script>
 

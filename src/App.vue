@@ -1,21 +1,34 @@
 <template>
-  <Navbar />
-  <main class="container">
-    <div class="col-md-12">
-        <div class="row">
-    <router-view/>
-    </div>
-    </div>
-  </main>
+  <div v-if="isAuthenticated">
+    <Navbar />
+    <main class="container">
+      <div class="col-md-12">
+          <div class="row">
+            <router-view/>
+          </div>
+      </div>
+    </main>
+  </div>
+  <div v-if="!isAuthenticated">
+    <Login/>
+  </div>
 </template>
 
 <script>
 import Navbar from './components/Navbar/Navbar.vue'
+import Login from './views/Autenticacao/Login.vue'
+
   export default {
     name: 'App',
     components: {
-      Navbar
-    }
+      Navbar,
+      Login
+    },
+    computed: {
+    isAuthenticated() {
+      return this.$store.state.isAuthenticated;
+    },
+  },
   }
 </script>
 
@@ -24,8 +37,11 @@ import Navbar from './components/Navbar/Navbar.vue'
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
   box-sizing: border-box;
+}
+
+input, select {
+  height: 45px;
 }
 
 .dropdown-menu[data-bs-popper] {

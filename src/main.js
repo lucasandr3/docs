@@ -5,4 +5,7 @@ import store from './store'
 import bootstrap from 'bootstrap/dist/js/bootstrap.js';
 import 'bootstrap/dist/css/bootstrap.css';
 
-createApp(App).use(store).use(router).use(bootstrap).mount('#app')
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
+createApp(App).use(store).use(router).use(bootstrap).use(VueSweetalert2).mount('#app')
